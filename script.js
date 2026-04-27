@@ -104,6 +104,41 @@
     langPrompt.classList.remove('show');
   });
 
+  // ===== Mobile nav drawer =====
+  const navToggle = document.getElementById('navToggle');
+  const nav = document.querySelector('.nav');
+  let scrim = null;
+
+  function ensureScrim() {
+    if (scrim) return scrim;
+    scrim = document.createElement('div');
+    scrim.className = 'nav-scrim';
+    scrim.addEventListener('click', closeMenu);
+    document.body.appendChild(scrim);
+    return scrim;
+  }
+  function openMenu() {
+    nav.classList.add('open');
+    ensureScrim().classList.add('open');
+    document.body.classList.add('nav-open');
+    navToggle.setAttribute('aria-expanded', 'true');
+  }
+  function closeMenu() {
+    nav.classList.remove('open');
+    scrim?.classList.remove('open');
+    document.body.classList.remove('nav-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+  navToggle?.addEventListener('click', () => {
+    if (nav.classList.contains('open')) closeMenu(); else openMenu();
+  });
+  // Close drawer when a nav link is clicked
+  nav?.querySelectorAll('a').forEach((a) => a.addEventListener('click', closeMenu));
+  // Close on Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && nav.classList.contains('open')) closeMenu();
+  });
+
   // ===== Smooth scroll =====
   document.querySelectorAll('a[href^="#"]').forEach((a) => {
     a.addEventListener('click', (e) => {
