@@ -96,29 +96,6 @@ input, select, textarea { font-family: inherit; font-size: inherit; }
 .btn-sm { padding: 8px 14px; font-size: 12px; }
 .btn-block { width: 100%; }
 
-/* ===== Lang prompt (bottom-left, slides in from side) ===== */
-.lang-prompt {
-  position: fixed;
-  bottom: 24px;
-  left: 24px;
-  z-index: 95;
-  transform: translateX(calc(-100% - 40px));
-  background: #fff;
-  border: 1px solid var(--border);
-  border-radius: 14px;
-  box-shadow: var(--shadow-lg);
-  padding: 14px 18px;
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-  max-width: calc(100vw - 48px);
-}
-.lang-prompt.show { transform: translateX(0); }
-.lang-prompt-text { display: flex; flex-direction: column; line-height: 1.3; }
-.lang-prompt-text strong { font-family: var(--font-hindi); color: var(--navy); font-size: 15px; }
-.lang-prompt-text span { font-size: 12px; color: var(--text-muted); }
-.lang-prompt-actions { display: flex; gap: 8px; }
 
 /* ===== Header ===== */
 .header {
@@ -1071,8 +1048,6 @@ section { padding: 100px 0; }
   .contact-form { padding: 22px; }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-meta { text-align: center; }
-  .lang-prompt { left: 12px; right: 12px; bottom: 12px; transform: translateY(calc(100% + 20px)); width: auto; max-width: none; }
-  .lang-prompt.show { transform: translateY(0); }
 }
 @media (max-width: 380px) {
   .logo-name { font-size: 11.5px; max-width: 130px; }

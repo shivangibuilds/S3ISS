@@ -26,9 +26,6 @@
 
   // ===== Language toggle =====
   const langToggle = document.getElementById('langToggle');
-  const langPrompt = document.getElementById('langPrompt');
-  const switchHindi = document.getElementById('switchHindi');
-  const dismissLang = document.getElementById('dismissLang');
 
   // Bilingual mailto subject + body. Swapped on language toggle
   const MAILTO_BASE = 'mailto:avinash@s3iss.in';
@@ -89,20 +86,7 @@
   });
 
   const stored = localStorage.getItem('s3iss-lang');
-  if (!stored) {
-    setTimeout(() => langPrompt.classList.add('show'), 1800);
-  } else if (stored === 'hi') {
-    applyLang('hi');
-  }
-
-  switchHindi?.addEventListener('click', () => {
-    applyLang('hi');
-    langPrompt.classList.remove('show');
-  });
-  dismissLang?.addEventListener('click', () => {
-    applyLang('en');
-    langPrompt.classList.remove('show');
-  });
+  if (stored === 'hi') applyLang('hi');
 
   // ===== Mobile nav drawer =====
   const navToggle = document.getElementById('navToggle');
