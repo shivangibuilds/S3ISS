@@ -1050,18 +1050,37 @@ section { padding: 100px 0; }
   .footer-inner { flex-direction: column; text-align: center; }
   .footer-meta { text-align: center; }
 }
-@media (max-width: 600px) {
-  .header-inner { height: 64px; gap: 12px; }
-  .logo-name { font-size: 13px; }
-  .logo-tagline { font-size: 9px; }
-  .header-cta .btn { padding: 9px 12px; font-size: 12.5px; }
+@media (max-width: 720px) {
+  .container { padding: 0 18px; }
+  .header-inner { height: 60px; gap: 8px; }
+  .logo-mark { width: 34px; height: 34px; }
+  .logo-name { font-size: 12.5px; max-width: 150px; line-height: 1.15; }
+  .logo-tagline { display: none; }
+  /* Hide Free Audit button in header on phones — accessible via hamburger and floating FAB */
+  .header-cta .btn-primary { display: none; }
+  .lang-toggle { padding: 5px 8px; font-size: 11.5px; }
+  .nav-toggle { width: 38px; height: 38px; }
   .services-grid { grid-template-columns: 1fr; }
+  .hero { min-height: 70vh; }
   .hero-cta { flex-direction: column; align-items: stretch; }
   .hero-cta .btn { width: 100%; }
+  .hero-trustbar { gap: 16px; font-size: 12px; }
+  .story-num { font-size: 44px; }
+  .where-grid, .contact-card { gap: 32px; padding: 32px 20px; }
   .contact-card { padding: 32px 20px; }
   .contact-form { padding: 22px; }
+  .footer-inner { flex-direction: column; text-align: center; }
+  .footer-meta { text-align: center; }
   .lang-prompt { left: 12px; right: 12px; bottom: 12px; transform: translateY(calc(100% + 20px)); width: auto; max-width: none; }
   .lang-prompt.show { transform: translateY(0); }
+}
+@media (max-width: 380px) {
+  .logo-name { font-size: 11.5px; max-width: 130px; }
+  .lang-toggle { padding: 4px 6px; }
+  .header-inner { gap: 6px; }
+  .container { padding: 0 14px; }
+  .hero-title { font-size: clamp(36px, 11vw, 60px); }
+  .hero-sub { font-size: 16px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
